@@ -10,22 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     init() {
-//        UINavigationBar
-//            .appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-//        UINavigationBar
-//            .appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-//        UINavigationBar
-//            .appearance().backgroundColor = .white
-//        UINavigationBar
-//            .appearance().tintColor = .white
-//        UINavigationBar
-//            .appearance().barTintColor = .blue
-//        UINavigationBar
-//            .appearance().isTranslucent = false
-        
-        
-        
-        
         let coloredNavAppearance = UINavigationBarAppearance()
         coloredNavAppearance.configureWithOpaqueBackground()
         coloredNavAppearance.backgroundColor = .white
@@ -34,31 +18,21 @@ struct ContentView: View {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().standardAppearance = coloredNavAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
-        
-        
     }
     var body: some View {
-        NavigationView {
-            
-            ScrollView(showsIndicators: false) {
-                ZStack {
-                    background
-                    header
-                    VStack {
-                        list(listName: "Assistidos")
-                        list(listName: "Na fila")
-                    }
-                    .padding(.top, 180)
+        
+        ScrollView(showsIndicators: false) {
+            ZStack {
+                background
+                header
+                VStack {
+                    list(listName: "Assistidos")
+                    list(listName: "Na fila")
                 }
-                
+                .padding(.top, 200)
             }
-            .navigationTitle("Irmandade Swift")
-//            .navigationBarTitleDisplayMode(.inline)
-            .background(Color.black)
-            //            .padding(.top, 50)
+            
         }
-        .foregroundColor(Color.white)
-        .ignoresSafeArea()
     }
     
     var header: some View {
